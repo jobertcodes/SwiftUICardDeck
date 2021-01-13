@@ -7,16 +7,35 @@
 
 import SwiftUI
 
-public struct CardView: View {
+public struct CardView<Content: View>: View {
+    private let content: Content
+    
+    init(content: Content) {
+        self.content = content
+    }
+    
     public var body: some View {
         GeometryReader { geometry in
-
+            content
         }
+    }
+}
+
+
+struct PokerCardView: View {
+    let cardValue: String
+    
+    var body: some View {
+        CardView(content: VStack(alignment: .center, content: {
+            Text(cardValue)
+                .font(.system(size: 500))
+                .frame(maxWidth: .infinity, alignment: .center)
+        }))
     }
 }
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView()
+        PokerCardView(cardValue: "🂡")
     }
 }
