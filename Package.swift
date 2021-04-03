@@ -6,7 +6,7 @@ let package = Package(
     name: "CardDeck",
     platforms: [
         .iOS(.v13),
-        .macOS(.v10_10),
+        .macOS(.v10_15),
         .watchOS(.v2),
         .tvOS(.v9)
     ],
