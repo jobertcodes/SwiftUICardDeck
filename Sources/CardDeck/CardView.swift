@@ -1,6 +1,6 @@
 //
 //  CardView.swift
-//  SwiftUICardDeck - https://codesparkio.github.io/SwiftUICardDeck/
+//  SwiftUICardDeck - https://jobertcodes.github.io/SwiftUICardDeck/
 //
 //  Created by Jobert Sa on 12/01/2021.
 //
