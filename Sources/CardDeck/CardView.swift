@@ -9,15 +9,24 @@ import SwiftUI
 
 public struct CardView<Content: View>: View {
     private let content: Content
+    let size: CGSize
+    let cornerRadius: CGFloat
     
-    init(content: Content) {
+    init(content: Content,
+         size: CGSize,
+         cornerRadius: CGFloat) {
         self.content = content
+        self.size = size
+        self.cornerRadius = cornerRadius
     }
     
     public var body: some View {
         GeometryReader { geometry in
             content
         }
+        .padding()
+        .frame(width: size.width, height: size.height)
+        .cornerRadius(cornerRadius)
     }
 }
 
@@ -28,9 +37,11 @@ struct PokerCardView: View {
     var body: some View {
         CardView(content: VStack(alignment: .center, content: {
             Text(cardValue)
-                .font(.system(size: 500))
+                .font(.system(size: 350))
                 .frame(maxWidth: .infinity, alignment: .center)
-        }))
+        }),
+        size: CGSize(width: 300, height: 400),
+        cornerRadius: 10)
     }
 }
 
